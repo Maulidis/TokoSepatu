@@ -1,4 +1,16 @@
 import 'package:flutter/material.dart';
+import 'package:sepatu_app/category_brand_shoes/adidas/adidas.dart';
+import 'package:sepatu_app/category/geoff_max.dart';
+import 'package:sepatu_app/category_brand_shoes/adidas/adidas.dart';
+import 'package:sepatu_app/category/asics.dart';
+import 'package:sepatu_app/category/convers.dart';
+import 'package:sepatu_app/category/geoff_max.dart';
+import 'package:sepatu_app/category/puma.dart';
+import 'package:sepatu_app/category/reebox.dart';
+import 'package:sepatu_app/category/vans.dart';
+import 'package:sepatu_app/category_brand_shoes/nike/nike.dart';
+import 'package:sepatu_app/login_page.dart';
+import 'package:sepatu_app/category_brand_shoes/nike/body.dart';
 import 'header.dart';
 
 class User extends StatefulWidget {
@@ -14,8 +26,8 @@ class _UserState extends State<User> {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        backgroundColor: Colors.blue,
-        title: const Text("Menu Utama..."),
+        backgroundColor: Colors.black54,
+        title: const Text("Kategori"),
       ),
       //menu bar
       drawer: Drawer(
@@ -46,179 +58,253 @@ class _UserState extends State<User> {
               ListTile(
                 leading: const Icon(Icons.logout),
                 title: const Text("Log Out"),
-                onTap: () {},
+                onTap: () {
+                  Navigator.of(context).pushReplacement(
+                    MaterialPageRoute(builder: (context) => LoginPage()));
+                },
               ),
             ],
           ),
         ),
       ),
       body: GridView.count(
-        padding: const EdgeInsets.all(25),
+        padding: const EdgeInsets.only(top: 10),
         crossAxisCount: 2,
         children: <Widget>[
           Card(
-            margin: const EdgeInsets.all(8),
+            elevation: 15,
+            shape:
+                RoundedRectangleBorder(borderRadius: BorderRadius.circular(20)),
             child: InkWell(
-              onTap: () {},
-              splashColor: Colors.blue,
+              onTap: () {
+
+                Navigator.of(context)
+                    .push(MaterialPageRoute(builder: (context) => nike()));
+              },
+              splashColor: Colors.lightBlueAccent,
               child: Center(
                 child: Column(
                   mainAxisSize: MainAxisSize.min,
-                  children: const <Widget>[
-                    Icon(
-                      Icons.home,
-                      size: 70,
-                      color: Colors.blueAccent,
+                  children: <Widget>[
+                    ClipRRect(
+                        borderRadius: BorderRadius.circular(0),
+                        child: Image.asset('assets/images/nike.png')),
+                    const Text(
+                      'NIKE',
+                      style: TextStyle(fontSize: 20.0),
                     ),
-                    Text("Sneakers", style: TextStyle(fontSize: 17.0)),
                   ],
                 ),
               ),
             ),
+            margin: const EdgeInsets.only(left: 10.0, right: 10.0, top: 10.0),
           ),
+
+          
           Card(
-            margin: const EdgeInsets.all(8),
+            elevation: 15,
+            shape:
+                RoundedRectangleBorder(borderRadius: BorderRadius.circular(20)),
             child: InkWell(
-              onTap: () {},
-              splashColor: Colors.blue,
+              onTap: () {
+                 Navigator.of(context)
+                    .push(MaterialPageRoute(builder: (context) => adidas()));
+              },
+              splashColor: Colors.lightBlueAccent,
               child: Center(
                 child: Column(
                   mainAxisSize: MainAxisSize.min,
-                  children: const <Widget>[
-                    Icon(
-                      Icons.new_releases,
-                      size: 70,
-                      color: Colors.redAccent,
+                  children: <Widget>[
+                    ClipRRect(
+                        borderRadius: BorderRadius.circular(0),
+                        child: Image.asset('assets/images/adidas.png')),
+                    const Text(
+                      'ADIDAS',
+                      style: TextStyle(fontSize: 20.0),
                     ),
-                    Text("Wedges", style: TextStyle(fontSize: 17.0)),
                   ],
                 ),
               ),
             ),
+            margin: const EdgeInsets.only(left: 10.0, right: 10.0, top: 10.0),
           ),
+
           Card(
-            margin: const EdgeInsets.all(8),
+            elevation: 15,
+            shape:
+                RoundedRectangleBorder(borderRadius: BorderRadius.circular(20)),
             child: InkWell(
-              onTap: () {},
-              splashColor: Colors.blue,
+              onTap: () {
+                 Navigator.of(context)
+                    .push(MaterialPageRoute(builder: (context) => vans()));
+              },
+              splashColor: Colors.lightBlueAccent,
               child: Center(
                 child: Column(
                   mainAxisSize: MainAxisSize.min,
-                  children: const <Widget>[
-                    Icon(
-                      Icons.military_tech,
-                      size: 70,
-                      color: Colors.greenAccent,
+                  children: <Widget>[
+                    ClipRRect(
+                        borderRadius: BorderRadius.circular(0),
+                        child: Image.asset('assets/images/vans.png')),
+                    const Text(
+                      'VANS',
+                      style: TextStyle(fontSize: 20.0, color: Colors.black ),
                     ),
-                    Text("Peep Toe Heels", style: TextStyle(fontSize: 17.0)),
                   ],
                 ),
               ),
             ),
+            margin: const EdgeInsets.only(left: 10.0, right: 10.0, top: 10.0),
           ),
+
           Card(
-            margin: const EdgeInsets.all(8),
+            elevation: 15,
+            shape:
+                RoundedRectangleBorder(borderRadius: BorderRadius.circular(20)),
             child: InkWell(
-              onTap: () {},
-              splashColor: Colors.blue,
+              onTap: () {
+                 Navigator.of(context)
+                    .push(MaterialPageRoute(builder: (context) => convers()));
+              },
+              splashColor: Colors.lightBlueAccent,
               child: Center(
                 child: Column(
                   mainAxisSize: MainAxisSize.min,
-                  children: const <Widget>[
-                    Icon(
-                      Icons.android,
-                      size: 70,
-                      color: Colors.blueGrey,
+                  children: <Widget>[
+                    ClipRRect(
+                        borderRadius: BorderRadius.circular(0),
+                        child: Image.asset('assets/images/convers.png')),
+                    const Text(
+                      'CONVERSE',
+                      style: TextStyle(fontSize: 20.0),
                     ),
-                    Text("Flat Shoes", style: TextStyle(fontSize: 17.0)),
                   ],
                 ),
               ),
             ),
+            margin: const EdgeInsets.only(left: 10.0, right: 10.0, top: 10.0),
           ),
+
           Card(
-            margin: const EdgeInsets.all(8),
+            elevation: 15,
+            shape:
+                RoundedRectangleBorder(borderRadius: BorderRadius.circular(20)),
             child: InkWell(
-              onTap: () {},
-              splashColor: Colors.blue,
+              onTap: () {
+                 Navigator.of(context)
+                    .push(MaterialPageRoute(builder: (context) => puma()));
+              },
+              splashColor: Colors.lightBlueAccent,
               child: Center(
                 child: Column(
                   mainAxisSize: MainAxisSize.min,
-                  children: const <Widget>[
-                    Icon(
-                      Icons.home,
-                      size: 70,
-                      color: Colors.blueAccent,
+                  children: <Widget>[
+                    ClipRRect(
+                        borderRadius: BorderRadius.circular(0),
+                        child: Image.asset('assets/images/puma.png')),
+                    const Text(
+                      'PUMA',
+                      style: TextStyle(fontSize: 20.0),
                     ),
-                    Text("Ballerina Flats", style: TextStyle(fontSize: 17.0)),
                   ],
                 ),
               ),
             ),
+            margin: const EdgeInsets.only(left: 10.0, right: 10.0, top: 10.0),
           ),
+
           Card(
-            margin: const EdgeInsets.all(8),
+            elevation: 15,
+            shape:
+                RoundedRectangleBorder(borderRadius: BorderRadius.circular(20)),
             child: InkWell(
-              onTap: () {},
-              splashColor: Colors.blue,
+              onTap: () {
+                 Navigator.of(context)
+                    .push(MaterialPageRoute(builder: (context) => reebox()));
+              },
+              splashColor: Colors.lightBlueAccent,
               child: Center(
                 child: Column(
                   mainAxisSize: MainAxisSize.min,
-                  children: const <Widget>[
-                    Icon(
-                      Icons.home,
-                      size: 70,
-                      color: Colors.blueAccent,
+                  children: <Widget>[
+                    ClipRRect(
+                        borderRadius: BorderRadius.circular(0),
+                        child: Image.asset('assets/images/reebok.png')),
+                    const Text(
+                      'REEBOK',
+                      style: TextStyle(fontSize: 20.0),
                     ),
-                    Text("Loafers", style: TextStyle(fontSize: 17.0)),
                   ],
                 ),
               ),
             ),
+            margin: const EdgeInsets.only(left: 10.0, right: 10.0, top: 10.0),
           ),
+
           Card(
-            margin: const EdgeInsets.all(8),
+            elevation: 15,
+            shape:
+                RoundedRectangleBorder(borderRadius: BorderRadius.circular(20)),
+            //    color: Colors.cyan,
             child: InkWell(
-              onTap: () {},
-              splashColor: Colors.blue,
+              onTap: () {
+                 Navigator.of(context)
+                    .push(MaterialPageRoute(builder: (context) => geoff()));
+              },
+              splashColor: Colors.lightBlueAccent,
               child: Center(
                 child: Column(
                   mainAxisSize: MainAxisSize.min,
-                  children: const <Widget>[
-                    Icon(
-                      Icons.home,
-                      size: 70,
-                      color: Colors.blueAccent,
+                  children: <Widget>[
+                    ClipRRect(
+                        borderRadius: BorderRadius.circular(0),
+                        child: Image.asset('assets/images/geoff.png')),
+                    const Text(
+                      'GEOOF MAX',
+                      style: TextStyle(fontSize: 20.0),
+                      
                     ),
-                    Text("Boots", style: TextStyle(fontSize: 17.0)),
                   ],
                 ),
               ),
             ),
+            margin: const EdgeInsets.only(left: 10.0, right: 10.0, top: 10.0),
           ),
+
           Card(
-            margin: const EdgeInsets.all(8),
+            elevation: 15,
+            shape:
+                RoundedRectangleBorder(borderRadius: BorderRadius.circular(20)),
             child: InkWell(
-              onTap: () {},
-              splashColor: Colors.blue,
+              onTap: () {
+                 Navigator.of(context)
+                    .push(MaterialPageRoute(builder: (context) => asics()));
+              },
+              splashColor: Colors.lightBlueAccent,
               child: Center(
                 child: Column(
                   mainAxisSize: MainAxisSize.min,
-                  children: const <Widget>[
-                    Icon(
-                      Icons.home,
-                      size: 70,
-                      color: Colors.blueAccent,
+                  children: <Widget>[
+                    ClipRRect(
+                        borderRadius: BorderRadius.circular(0),
+                        child: Image.asset('assets/images/ascis.png')),
+                    const Text(
+               
+                      'ASICS',
+                      style: TextStyle(fontSize: 20.0),
                     ),
-                    Text("Derby Shoes", style: TextStyle(fontSize: 17.0)),
                   ],
                 ),
               ),
             ),
+            margin: const EdgeInsets.only(left: 10.0, right: 10.0, top: 10.0),
           ),
+           
+         
           const SizedBox(height: 16),
         ],
       ),
     );
   }
 }
+
