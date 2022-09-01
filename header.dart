@@ -23,17 +23,17 @@ class _MyHeaderDrawerState extends State<MyHeaderDrawer> {
             height: 70.0,
             decoration: const BoxDecoration(
               shape: BoxShape.rectangle,
-              //image: DecorationImage(
-              //image: AssetImage('assets/images/icon.png'),
+              image: DecorationImage(
+              image: AssetImage('assets/images/logome.png'),
             ),
           ),
-          //),
+          ),
           const Text(
-            "Menu Utama",
+            "Profil",
             style: TextStyle(color: Colors.white, fontSize: 20),
           ),
           const Text(
-            "Menu, Aktual dan Terpercaya",
+            "selamat datang user",
             style: TextStyle(color: Colors.white, fontSize: 14),
           ),
         ],
